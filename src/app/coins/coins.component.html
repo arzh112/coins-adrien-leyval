@@ -1,1 +1,18 @@
-<p>coins works!</p>
+<div class="container my-3">
+    <div class="row gap-3 justify-content-center">
+        <div class="card col-2" *ngFor="let coin of coins">
+            <div class="card-header">
+                {{ coin.name }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ coin.symbol }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Classement : {{ coin.rank }} </h6>
+                <p class="card-text">Prix : {{ coin.priceUsd | number: '1.0-0' }}</p>
+                <p class="card-text">Variation sur 24h : {{ coin.changePercent24Hr }}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{{ coin.explorer }}" target="_blank">Site</a>
+            </div>
+        </div>
+    </div>
+</div>
