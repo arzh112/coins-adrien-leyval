@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoinsService } from '../coins.service';
-import { ICoins } from '../ICoins';
+import { ICoin } from '../ICoin';
 
 @Component({
   selector: 'app-coins',
@@ -9,8 +9,8 @@ import { ICoins } from '../ICoins';
 })
 export class CoinsComponent implements OnInit {
 
-  public coins: ICoins[] = [];
-  public coin?: ICoins;
+  public coins: ICoin[] = [];
+  public coin?: ICoin;
   public search: string = "";
 
   constructor(private coinsService: CoinsService) {}
@@ -28,7 +28,7 @@ export class CoinsComponent implements OnInit {
     })
   }
 
-  selectCoin(coin: ICoins) {
+  selectCoin(coin: ICoin) {
     this.coin = coin;
   }
 

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICoins } from '../ICoins';
+import { ICoin } from '../ICoin';
 
 @Component({
   selector: 'app-coins-modal',
@@ -7,5 +7,5 @@ import { ICoins } from '../ICoins';
   styleUrls: ['./coins-modal.component.css']
 })
 export class CoinsModalComponent {
-  @Input() coinModal?: ICoins;
+  @Input() coinModal?: ICoin;
 }
