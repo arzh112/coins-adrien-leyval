@@ -14,13 +14,16 @@
                 <div *ngIf="coinModal?.supply === coinModal?.maxSupply; else elseBlock">
                     <p class="text-danger">Quantité maximale atteinte</p>
                 </div>
+                
                 <ng-template #elseBlock>
-                    <p>Quantité maximale : {{ coinModal?.maxSupply | number: '1.0-0'}}</p>
+                    <p *ngIf="coinModal?.maxSupply !== null">Quantité maximale : {{ coinModal?.maxSupply | number: '1.0-0'}}</p>
                 </ng-template>
             
                 <p>Capitalisation boursière : {{ coinModal?.marketCapUsd | number: '1.2-2'}}</p>
-                <p>{{ coinModal?.volumeUsd24Hr | number: '1.0-0' }}</p>
-                <p>Variation sur 24h : {{ coinModal?.changePercent24Hr | number: '1.4-4' }} %</p>            </div>
+                <p>Volume sur 24h : {{ coinModal?.volumeUsd24Hr | number: '1.0-0' }} USD</p>
+
+                <p class="text-card">Variation sur 24h : {{ coinModal?.changePercent24Hr | number: '1.4-4' }} %</p>
+
             <div class="modal-footer">
                 <a href="{{ coinModal?.explorer }}" target="_blank">Site</a>
             </div>

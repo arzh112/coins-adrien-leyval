@@ -10,7 +10,7 @@ import { ICoin } from '../ICoin';
 export class CoinsComponent implements OnInit {
 
   public coins: ICoin[] = [];
-  public coin?: ICoin;
+  public coin!: ICoin;
   public search: string = "";
 
   constructor(private coinsService: CoinsService) {}
@@ -21,9 +21,9 @@ export class CoinsComponent implements OnInit {
 
   getCoins() {
     this.coinsService.fetchAll().subscribe( data => {
-      console.log(data);
+      //console.log(data);
       const dataArray = Object.values(data);
-      console.log(dataArray[0]);
+      //console.log(dataArray[0]);
       this.coins = dataArray[0];
     })
   }
@@ -31,6 +31,4 @@ export class CoinsComponent implements OnInit {
   selectCoin(coin: ICoin) {
     this.coin = coin;
   }
-
-  
 }
