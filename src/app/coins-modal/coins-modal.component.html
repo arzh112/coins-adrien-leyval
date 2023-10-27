@@ -1,1 +1,22 @@
-<p>coins-modal works!</p>
+<div class="modal fade" id="coinsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{ coinModal?.symbol }}</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>{{ coinModal?.name }}</p>
+                <p>Classement : {{ coinModal?.rank }}</p>
+                <p>Price : {{ coinModal?.priceUsd | number: '1.4-4' }} USD</p>
+                <p>Quantité : {{ coinModal?.supply | number: '1.0-0' }}</p>
+                <p>Quantité maximale : {{ coinModal?.maxSupply | number: '1.0-0'}}</p>
+                <p>Capitalisation boursière : {{ coinModal?.marketCapUsd | number: '1.2-2'}}</p>
+                <p>{{ coinModal?.volumeUsd24Hr | number: '1.0-0' }}</p>
+                <p>Variation sur 24h : {{ coinModal?.changePercent24Hr | number: '1.4-4' }} %</p>            </div>
+            <div class="modal-footer">
+                <a href="{{ coinModal?.explorer }}" target="_blank">Site</a>
+            </div>
+        </div>
+    </div>
+</div>

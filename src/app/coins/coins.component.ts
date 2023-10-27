@@ -9,10 +9,11 @@ import { ICoins } from '../ICoins';
 })
 export class CoinsComponent implements OnInit {
 
-  
-  public coins?: ICoins[];
-  constructor(private coinsService: CoinsService) {}
+  public coins: ICoins[] = [];
+  public coin?: ICoins;
+  public search: string = "";
 
+  constructor(private coinsService: CoinsService) {}
 
   ngOnInit(): void {
     this.getCoins();
@@ -26,4 +27,10 @@ export class CoinsComponent implements OnInit {
       this.coins = dataArray[0];
     })
   }
+
+  selectCoin(coin: ICoins) {
+    this.coin = coin;
+  }
+
+  
 }
